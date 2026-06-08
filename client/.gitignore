@@ -1,0 +1,26 @@
+# Qt Creator user settings
+.qtcreator/
+*.pro.user
+
+# Build output
+build/
+bin/
+release/
+debug/
+*.o
+*.obj
+*.exe
+*.dll
+*.a
+*.lib
+
+# Generated Qt files
+moc_*.cpp
+ui_*.h
+qrc_*.cpp
+*.moc
+
+# Editor / temp files
+*.user
+*.autosave
+*.log

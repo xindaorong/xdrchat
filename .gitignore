@@ -1,0 +1,45 @@
+# Dependencies
+**/node_modules/
+**/packages/
+
+# Build output
+**/build/
+**/Debug/
+**/debug/
+**/Release/
+**/release/
+**/x64/
+**/bin/
+**/enc_temp_folder/
+
+# IDE and user-local files
+**/.vs/
+**/.vscode/.browse.VC.db*
+**/.qtcreator/
+*.suo
+*.user
+*.vcxproj.user
+*.pro.user
+*.autosave
+
+# Compiled binaries and logs
+*.exe
+*.dll
+*.obj
+*.pdb
+*.ilk
+*.idb
+*.log
+*.tlog
+
+# Local private configuration
+server/VerifyServer/config.json
+server/gateserver/GateServer/config.ini
+server/gateserver/GateServer/错误日志.md
+
+# Accidental command-output files
+server/VerifyServer/node
+server/VerifyServer/verifyserver@1.0.0
+
+# Duplicated nested server copy inside the client checkout
+client/server/
