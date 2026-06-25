@@ -17,6 +17,7 @@ public:
 signals:
 // ：LoginDialog 喊话"我要注册"，MainWindow 听到后负责换页面。
     void switchRegister();
+    void switchReset();
 
 private:
     Ui::LoginDialog *ui;

@@ -19,9 +19,11 @@ public:
     ~MainWindow() override;
 public slots:
     void SlotSwitchReg();
+    void SlotSwitchLogin();
+    void SlotSwitchReset();
 private:
     Ui::MainWindow *ui;
-    LoginDialog *_log_dlg;
+    LoginDialog *_login_dlg;
     RegisterDialog *_reg_dlg;
 };
 #endif // MAINWINDOW_H

@@ -11,6 +11,30 @@
 #include <hiredis/hiredis.h>
 #include <queue>
 #include <mutex>
+#include <boost/beast/http.hpp>
+#include <boost/beast.hpp>
+#include <boost/asio.hpp>
+#include <memory>
+#include <iostream>
+#include <unordered_map>
+#include <json/json.h>
+#include <json/value.h>
+#include <json/reader.h>
+#include "Singleton.h"
+#include <assert.h>
+#include <queue>
+#include <jdbc/mysql_driver.h>
+#include <jdbc/mysql_connection.h>
+#include <jdbc/cppconn/prepared_statement.h>
+#include <jdbc/cppconn/resultset.h>
+#include <jdbc/cppconn/statement.h>
+#include <jdbc/cppconn/exception.h>
+#include <iostream>
+#include <functional>
+#include <boost/uuid/uuid.hpp>
+#include <boost/uuid/uuid_generators.hpp>
+#include <boost/uuid/uuid_io.hpp>
+#include <string>
 class ConfigMgr;
 extern ConfigMgr gCfgMgr;
 enum ErrorCodes {
@@ -26,8 +50,21 @@ enum ErrorCodes {
 	PasswdInvalid = 1009,   //密码更新失败
 	TokenInvalid = 1010,   //Token失效
 	UidInvalid = 1011,  //uid无效
+	SqlError = 1012
 };
+class Defer {
+public:
+	// 接受一个lambda表达式或者函数指针
+	Defer(std::function<void()> func) : func_(func) {}
 
+	// 析构函数中执行传入的函数
+	~Defer() {
+		func_();
+	}
+
+private:
+	std::function<void()> func_;
+};
 namespace beast = boost::beast;         // from <boost/beast.hpp>
 namespace http = beast::http;           // from <boost/beast/http.hpp>
 namespace net = boost::asio;            // from <boost/asio.hpp>

@@ -2,6 +2,10 @@
     <qresource prefix="/">
         <file>res/1.jpg</file>
         <file>res/2.png</file>
+        <file>res/unvisible.png</file>
+        <file>res/unvisible_hover.png</file>
+        <file>res/visible.png</file>
+        <file>res/visible_hover.png</file>
         <file>style/stylesheet.qss</file>
     </qresource>
 </RCC>
