@@ -99,7 +99,7 @@ QPushButton:pressed { background-color: #242831; }</string>
    <item>
     <widget class="QStackedWidget" name="stackedWidget">
      <property name="currentIndex">
-      <number>1</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="page">
       <layout class="QVBoxLayout" name="verticalLayout">
@@ -413,7 +413,7 @@ QPushButton:pressed { background-color: #242831; }</string>
          </property>
         </spacer>
        </item>
-       <item>
+       <item alignment="Qt::AlignHCenter">
         <widget class="QPushButton" name="return_btn">
          <property name="minimumSize">
           <size>

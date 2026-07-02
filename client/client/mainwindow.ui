@@ -35,6 +35,12 @@
      <height>25</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuxdrchat">
+    <property name="title">
+     <string>xdrchat</string>
+    </property>
+   </widget>
+   <addaction name="menuxdrchat"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>

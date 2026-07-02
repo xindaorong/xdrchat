@@ -45,6 +45,7 @@ emit clicked();   // 相当于群发广播："我被人点了！"
 在某个地方用 `connect` 连线：
 
 [registerdialog.cpp:68](registerdialog.cpp#L68)
+
 ```cpp
 connect(ui->pass_visible,     // 谁发出信号
         &ClickedLabel::clicked, // 哪个信号

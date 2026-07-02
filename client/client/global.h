@@ -8,12 +8,13 @@
 
 // 全局样式刷新函数，在设置了动态属性后调用它来让 QSS 立刻生效
 extern std::function<void(QWidget*)> repolish;
-
+extern std::function<QString(QString)> xorString;
 // 修正：这些枚举在代码里是按 `ReqId::xxx` / `ErrorCode::xxx` / `Modules::xxx` 使用的，
 // 所以这里必须定义成 enum class，不然会编译报错。
 enum ReqId {
     ID_GET_VERIFY_CODE = 1001, // 获取验证码
-    ID_REG_USER = 1002         // 注册用户
+    ID_REG_USER = 1002,         // 注册用户
+    ID_RESET_PWD=1003   //重置密码
 };
 
 enum  ErrorCode {
@@ -22,8 +23,11 @@ enum  ErrorCode {
     ERR_NETWORK = 2
 };
 
-enum  Modules {
-    REGISTERMOD = 0
+
+enum Modules{
+    REGISTERMOD = 0,
+    RESETMOD = 1,
+    LOGINMOD = 2,
 };
 
 enum TipErr {

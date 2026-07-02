@@ -806,5 +806,5 @@ ApplyFriendItem #addBtn[state='press'] {
  border-image: url(:/res/voice_chat_press.png);
 }
 
-#
+
 

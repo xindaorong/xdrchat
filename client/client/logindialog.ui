@@ -165,9 +165,9 @@
         </spacer>
        </item>
        <item>
-        <widget class="QPushButton" name="forget_pass">
+        <widget class="ClickedLabel" name="forget_label">
          <property name="text">
-          <string>忘记密码</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;忘记密码&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
         </widget>
        </item>
@@ -257,6 +257,13 @@
    </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>ClickedLabel</class>
+   <extends>QLabel</extends>
+   <header>clickedlabel.h</header>
+  </customwidget>
+ </customwidgets>
  <resources>
   <include location="rc.qrc"/>
  </resources>

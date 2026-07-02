@@ -26,7 +26,7 @@ public:
 signals:
     void sig_http_finish(ReqId id, QString res, ErrorCode err, Modules mod);
     void sig_reg_mod_finish(ReqId id, QString res, ErrorCode err);
-
+    void sig_reset_mod_finish(ReqId id, QString res, ErrorCode err);
 private:
     friend class Singleton<HttpMgr>;
     HttpMgr();
@@ -34,6 +34,7 @@ private:
 
 private slots:
     void slot_http_finish(ReqId id, QString res, ErrorCode err, Modules mod);
+
 };
 
 #endif // HTTPMGR_H

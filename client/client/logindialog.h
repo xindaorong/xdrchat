@@ -14,10 +14,14 @@ class LoginDialog : public QDialog
 public:
     explicit LoginDialog(QWidget *parent = nullptr);
     ~LoginDialog();
+
+private:
+    void slot_forget_pwd();
 signals:
 // ：LoginDialog 喊话"我要注册"，MainWindow 听到后负责换页面。
     void switchRegister();
     void switchReset();
+
 
 private:
     Ui::LoginDialog *ui;

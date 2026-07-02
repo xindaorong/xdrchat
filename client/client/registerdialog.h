@@ -50,7 +50,6 @@ private slots:
     void on_sure_btn_clicked();
     void on_cancel_btn_clicked();
     void on_return_btn_clicked();
-    void on_pass_visible_linkActivated(const QString &link);
 };
 
 #endif // REGISTERDIALOG_H

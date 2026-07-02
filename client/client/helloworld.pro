@@ -15,6 +15,7 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     registerdialog.cpp \
+    resetdialog.cpp \
     timerbtn.cpp
 
 HEADERS += \
@@ -24,13 +25,15 @@ HEADERS += \
     logindialog.h \
     mainwindow.h \
     registerdialog.h \
+    resetdialog.h \
     singleton.h \
     timerbtn.h
 
 FORMS += \
     logindialog.ui \
     mainwindow.ui \
-    registerdialog.ui
+    registerdialog.ui \
+    resetdialog.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -56,3 +59,6 @@ win32:CONFIG(debug, debug | release)
         #执行copy命令
         QMAKE_POST_LINK += $(COPY_FILE) \"$$TargetConfig\" \"$$OutputDir\"
 }
+
+SUBDIRS += \
+    ../../llfcchat/client/llfcchat/llfcchat.pro
