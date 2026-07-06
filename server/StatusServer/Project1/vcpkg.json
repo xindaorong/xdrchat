@@ -1,0 +1,7 @@
+{
+  "name": "project1-status-server",
+  "version-string": "0.1.0",
+  "dependencies": [
+    "hiredis"
+  ]
+}

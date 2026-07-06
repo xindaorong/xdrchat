@@ -15,6 +15,17 @@ void HttpMgr::PostHttpReq(const QUrl& url,const QJsonObject& json,ReqId req_id,M
 {
     //创建一个HTTP Post请求,并设置请求头和请求体
     QByteArray data=QJsonDocument(json).toJson();
+    QJsonObject logJson = json;
+    if (logJson.contains("passwd")) {
+        logJson["passwd"] = "***";
+    }
+    if (logJson.contains("confirm")) {
+        logJson["confirm"] = "***";
+    }
+    qDebug() << "http post url:" << url
+             << "req_id:" << req_id
+             << "module:" << mod
+             << "body:" << QJsonDocument(logJson).toJson(QJsonDocument::Compact);
     //通过url构造请求
     QNetworkRequest request(url);
     request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
@@ -23,13 +34,21 @@ void HttpMgr::PostHttpReq(const QUrl& url,const QJsonObject& json,ReqId req_id,M
     auto self=shared_from_this();
     QNetworkReply* reply=_manager.post(request,data);
     //设置信号和槽等待发送完成
-    QObject::connect(reply, &QNetworkReply::finished, [reply, self, req_id, mod]() {
+    QObject::connect(reply, &QNetworkReply::finished, [reply, self, req_id, mod, url]() {
+        const int statusCode = reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
         // 处理错误或成功
         if (reply->error() != QNetworkReply::NoError) {
-            qDebug() << "error:" << reply->errorString();
+            qDebug() << "http error url:" << url
+                     << "status:" << statusCode
+                     << "error:" << reply->errorString();
             emit self->sig_http_finish(req_id, "", ErrorCode::ERR_NETWORK, mod);
         } else {
             QString res = reply->readAll();
+            qDebug() << "http response url:" << url
+                     << "status:" << statusCode
+                     << "req_id:" << req_id
+                     << "module:" << mod
+                     << "raw:" << res;
             emit self->sig_http_finish(req_id, res, ErrorCode::Success, mod);
         }
         reply->deleteLater();
@@ -45,5 +64,15 @@ void HttpMgr::slot_http_finish(ReqId id, QString res, ErrorCode err, Modules mod
     {
         //发送信号通知指定模版http响应结束
         emit sig_reg_mod_finish(id,res,err);
+    }
+
+    if(mod==Modules::RESETMOD)
+    {
+        //发送信号通知指定模块http响应结束
+        emit sig_reset_mod_finish(id,res,err);
+    }
+    if(mod==Modules::LOGINMOD)
+    {
+        emit sig_login_mod_finish(id,res,err);
     }
 }

@@ -45,39 +45,47 @@ struct TableStruct_message_2eproto {
 };
 extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_message_2eproto;
 namespace message {
-class GetVerifyReq;
-struct GetVerifyReqDefaultTypeInternal;
-extern GetVerifyReqDefaultTypeInternal _GetVerifyReq_default_instance_;
-class GetVerifyRsp;
-struct GetVerifyRspDefaultTypeInternal;
-extern GetVerifyRspDefaultTypeInternal _GetVerifyRsp_default_instance_;
+class GetChatServerReq;
+struct GetChatServerReqDefaultTypeInternal;
+extern GetChatServerReqDefaultTypeInternal _GetChatServerReq_default_instance_;
+class GetChatServerRsp;
+struct GetChatServerRspDefaultTypeInternal;
+extern GetChatServerRspDefaultTypeInternal _GetChatServerRsp_default_instance_;
+class GetVarifyReq;
+struct GetVarifyReqDefaultTypeInternal;
+extern GetVarifyReqDefaultTypeInternal _GetVarifyReq_default_instance_;
+class GetVarifyRsp;
+struct GetVarifyRspDefaultTypeInternal;
+extern GetVarifyRspDefaultTypeInternal _GetVarifyRsp_default_instance_;
 }  // namespace message
 PROTOBUF_NAMESPACE_OPEN
-template<> ::message::GetVerifyReq* Arena::CreateMaybeMessage<::message::GetVerifyReq>(Arena*);
-template<> ::message::GetVerifyRsp* Arena::CreateMaybeMessage<::message::GetVerifyRsp>(Arena*);
+template<> ::message::GetChatServerReq* Arena::CreateMaybeMessage<::message::GetChatServerReq>(Arena*);
+template<> ::message::GetChatServerRsp* Arena::CreateMaybeMessage<::message::GetChatServerRsp>(Arena*);
+template<> ::message::GetVarifyReq* Arena::CreateMaybeMessage<::message::GetVarifyReq>(Arena*);
+template<> ::message::GetVarifyRsp* Arena::CreateMaybeMessage<::message::GetVarifyRsp>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace message {
 
 // ===================================================================
 
-class GetVerifyReq final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:message.GetVerifyReq) */ {
+class GetVarifyReq final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:message.GetVarifyReq) */ {
  public:
-  inline GetVerifyReq() : GetVerifyReq(nullptr) {}
-  ~GetVerifyReq() override;
-  explicit PROTOBUF_CONSTEXPR GetVerifyReq(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  inline GetVarifyReq() : GetVarifyReq(nullptr) {}
+  ~GetVarifyReq() override;
+  explicit PROTOBUF_CONSTEXPR GetVarifyReq(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  GetVerifyReq(const GetVerifyReq& from);
-  GetVerifyReq(GetVerifyReq&& from) noexcept
-    : GetVerifyReq() {
+  GetVarifyReq(const GetVarifyReq& from);
+  GetVarifyReq(GetVarifyReq&& from) noexcept
+    : GetVarifyReq() {
     *this = ::std::move(from);
   }
 
-  inline GetVerifyReq& operator=(const GetVerifyReq& from) {
+  inline GetVarifyReq& operator=(const GetVarifyReq& from) {
     CopyFrom(from);
     return *this;
   }
-  inline GetVerifyReq& operator=(GetVerifyReq&& from) noexcept {
+  inline GetVarifyReq& operator=(GetVarifyReq&& from) noexcept {
     if (this == &from) return *this;
     if (GetOwningArena() == from.GetOwningArena()
   #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
@@ -100,20 +108,20 @@ class GetVerifyReq final :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const GetVerifyReq& default_instance() {
+  static const GetVarifyReq& default_instance() {
     return *internal_default_instance();
   }
-  static inline const GetVerifyReq* internal_default_instance() {
-    return reinterpret_cast<const GetVerifyReq*>(
-               &_GetVerifyReq_default_instance_);
+  static inline const GetVarifyReq* internal_default_instance() {
+    return reinterpret_cast<const GetVarifyReq*>(
+               &_GetVarifyReq_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     0;
 
-  friend void swap(GetVerifyReq& a, GetVerifyReq& b) {
+  friend void swap(GetVarifyReq& a, GetVarifyReq& b) {
     a.Swap(&b);
   }
-  inline void Swap(GetVerifyReq* other) {
+  inline void Swap(GetVarifyReq* other) {
     if (other == this) return;
   #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
     if (GetOwningArena() != nullptr &&
@@ -126,7 +134,7 @@ class GetVerifyReq final :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(GetVerifyReq* other) {
+  void UnsafeArenaSwap(GetVarifyReq* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
     InternalSwap(other);
@@ -134,14 +142,14 @@ class GetVerifyReq final :
 
   // implements Message ----------------------------------------------
 
-  GetVerifyReq* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<GetVerifyReq>(arena);
+  GetVarifyReq* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<GetVarifyReq>(arena);
   }
   using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const GetVerifyReq& from);
+  void CopyFrom(const GetVarifyReq& from);
   using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom( const GetVerifyReq& from) {
-    GetVerifyReq::MergeImpl(*this, from);
+  void MergeFrom( const GetVarifyReq& from) {
+    GetVarifyReq::MergeImpl(*this, from);
   }
   private:
   static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
@@ -159,15 +167,15 @@ class GetVerifyReq final :
   void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(GetVerifyReq* other);
+  void InternalSwap(GetVarifyReq* other);
 
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "message.GetVerifyReq";
+    return "message.GetVarifyReq";
   }
   protected:
-  explicit GetVerifyReq(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+  explicit GetVarifyReq(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
   public:
 
@@ -197,7 +205,7 @@ class GetVerifyReq final :
   std::string* _internal_mutable_email();
   public:
 
-  // @@protoc_insertion_point(class_scope:message.GetVerifyReq)
+  // @@protoc_insertion_point(class_scope:message.GetVarifyReq)
  private:
   class _Internal;
 
@@ -213,24 +221,24 @@ class GetVerifyReq final :
 };
 // -------------------------------------------------------------------
 
-class GetVerifyRsp final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:message.GetVerifyRsp) */ {
+class GetVarifyRsp final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:message.GetVarifyRsp) */ {
  public:
-  inline GetVerifyRsp() : GetVerifyRsp(nullptr) {}
-  ~GetVerifyRsp() override;
-  explicit PROTOBUF_CONSTEXPR GetVerifyRsp(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  inline GetVarifyRsp() : GetVarifyRsp(nullptr) {}
+  ~GetVarifyRsp() override;
+  explicit PROTOBUF_CONSTEXPR GetVarifyRsp(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  GetVerifyRsp(const GetVerifyRsp& from);
-  GetVerifyRsp(GetVerifyRsp&& from) noexcept
-    : GetVerifyRsp() {
+  GetVarifyRsp(const GetVarifyRsp& from);
+  GetVarifyRsp(GetVarifyRsp&& from) noexcept
+    : GetVarifyRsp() {
     *this = ::std::move(from);
   }
 
-  inline GetVerifyRsp& operator=(const GetVerifyRsp& from) {
+  inline GetVarifyRsp& operator=(const GetVarifyRsp& from) {
     CopyFrom(from);
     return *this;
   }
-  inline GetVerifyRsp& operator=(GetVerifyRsp&& from) noexcept {
+  inline GetVarifyRsp& operator=(GetVarifyRsp&& from) noexcept {
     if (this == &from) return *this;
     if (GetOwningArena() == from.GetOwningArena()
   #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
@@ -253,20 +261,20 @@ class GetVerifyRsp final :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const GetVerifyRsp& default_instance() {
+  static const GetVarifyRsp& default_instance() {
     return *internal_default_instance();
   }
-  static inline const GetVerifyRsp* internal_default_instance() {
-    return reinterpret_cast<const GetVerifyRsp*>(
-               &_GetVerifyRsp_default_instance_);
+  static inline const GetVarifyRsp* internal_default_instance() {
+    return reinterpret_cast<const GetVarifyRsp*>(
+               &_GetVarifyRsp_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     1;
 
-  friend void swap(GetVerifyRsp& a, GetVerifyRsp& b) {
+  friend void swap(GetVarifyRsp& a, GetVarifyRsp& b) {
     a.Swap(&b);
   }
-  inline void Swap(GetVerifyRsp* other) {
+  inline void Swap(GetVarifyRsp* other) {
     if (other == this) return;
   #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
     if (GetOwningArena() != nullptr &&
@@ -279,7 +287,7 @@ class GetVerifyRsp final :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(GetVerifyRsp* other) {
+  void UnsafeArenaSwap(GetVarifyRsp* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
     InternalSwap(other);
@@ -287,14 +295,14 @@ class GetVerifyRsp final :
 
   // implements Message ----------------------------------------------
 
-  GetVerifyRsp* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<GetVerifyRsp>(arena);
+  GetVarifyRsp* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<GetVarifyRsp>(arena);
   }
   using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const GetVerifyRsp& from);
+  void CopyFrom(const GetVarifyRsp& from);
   using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom( const GetVerifyRsp& from) {
-    GetVerifyRsp::MergeImpl(*this, from);
+  void MergeFrom( const GetVarifyRsp& from) {
+    GetVarifyRsp::MergeImpl(*this, from);
   }
   private:
   static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
@@ -312,15 +320,15 @@ class GetVerifyRsp final :
   void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(GetVerifyRsp* other);
+  void InternalSwap(GetVarifyRsp* other);
 
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "message.GetVerifyRsp";
+    return "message.GetVarifyRsp";
   }
   protected:
-  explicit GetVerifyRsp(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+  explicit GetVarifyRsp(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
   public:
 
@@ -375,7 +383,7 @@ class GetVerifyRsp final :
   void _internal_set_error(int32_t value);
   public:
 
-  // @@protoc_insertion_point(class_scope:message.GetVerifyRsp)
+  // @@protoc_insertion_point(class_scope:message.GetVarifyRsp)
  private:
   class _Internal;
 
@@ -391,6 +399,350 @@ class GetVerifyRsp final :
   union { Impl_ _impl_; };
   friend struct ::TableStruct_message_2eproto;
 };
+// -------------------------------------------------------------------
+
+class GetChatServerReq final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:message.GetChatServerReq) */ {
+ public:
+  inline GetChatServerReq() : GetChatServerReq(nullptr) {}
+  ~GetChatServerReq() override;
+  explicit PROTOBUF_CONSTEXPR GetChatServerReq(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  GetChatServerReq(const GetChatServerReq& from);
+  GetChatServerReq(GetChatServerReq&& from) noexcept
+    : GetChatServerReq() {
+    *this = ::std::move(from);
+  }
+
+  inline GetChatServerReq& operator=(const GetChatServerReq& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline GetChatServerReq& operator=(GetChatServerReq&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const GetChatServerReq& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const GetChatServerReq* internal_default_instance() {
+    return reinterpret_cast<const GetChatServerReq*>(
+               &_GetChatServerReq_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    2;
+
+  friend void swap(GetChatServerReq& a, GetChatServerReq& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(GetChatServerReq* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(GetChatServerReq* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  GetChatServerReq* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<GetChatServerReq>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const GetChatServerReq& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const GetChatServerReq& from) {
+    GetChatServerReq::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GetChatServerReq* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "message.GetChatServerReq";
+  }
+  protected:
+  explicit GetChatServerReq(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kUidFieldNumber = 1,
+  };
+  // int32 uid = 1;
+  void clear_uid();
+  int32_t uid() const;
+  void set_uid(int32_t value);
+  private:
+  int32_t _internal_uid() const;
+  void _internal_set_uid(int32_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:message.GetChatServerReq)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    int32_t uid_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_message_2eproto;
+};
+// -------------------------------------------------------------------
+
+class GetChatServerRsp final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:message.GetChatServerRsp) */ {
+ public:
+  inline GetChatServerRsp() : GetChatServerRsp(nullptr) {}
+  ~GetChatServerRsp() override;
+  explicit PROTOBUF_CONSTEXPR GetChatServerRsp(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  GetChatServerRsp(const GetChatServerRsp& from);
+  GetChatServerRsp(GetChatServerRsp&& from) noexcept
+    : GetChatServerRsp() {
+    *this = ::std::move(from);
+  }
+
+  inline GetChatServerRsp& operator=(const GetChatServerRsp& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline GetChatServerRsp& operator=(GetChatServerRsp&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const GetChatServerRsp& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const GetChatServerRsp* internal_default_instance() {
+    return reinterpret_cast<const GetChatServerRsp*>(
+               &_GetChatServerRsp_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    3;
+
+  friend void swap(GetChatServerRsp& a, GetChatServerRsp& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(GetChatServerRsp* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(GetChatServerRsp* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  GetChatServerRsp* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<GetChatServerRsp>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const GetChatServerRsp& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const GetChatServerRsp& from) {
+    GetChatServerRsp::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GetChatServerRsp* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "message.GetChatServerRsp";
+  }
+  protected:
+  explicit GetChatServerRsp(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kHostFieldNumber = 2,
+    kPortFieldNumber = 3,
+    kTokenFieldNumber = 4,
+    kErrorFieldNumber = 1,
+  };
+  // string host = 2;
+  void clear_host();
+  const std::string& host() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_host(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_host();
+  PROTOBUF_NODISCARD std::string* release_host();
+  void set_allocated_host(std::string* host);
+  private:
+  const std::string& _internal_host() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_host(const std::string& value);
+  std::string* _internal_mutable_host();
+  public:
+
+  // string port = 3;
+  void clear_port();
+  const std::string& port() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_port(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_port();
+  PROTOBUF_NODISCARD std::string* release_port();
+  void set_allocated_port(std::string* port);
+  private:
+  const std::string& _internal_port() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_port(const std::string& value);
+  std::string* _internal_mutable_port();
+  public:
+
+  // string token = 4;
+  void clear_token();
+  const std::string& token() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_token(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_token();
+  PROTOBUF_NODISCARD std::string* release_token();
+  void set_allocated_token(std::string* token);
+  private:
+  const std::string& _internal_token() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_token(const std::string& value);
+  std::string* _internal_mutable_token();
+  public:
+
+  // int32 error = 1;
+  void clear_error();
+  int32_t error() const;
+  void set_error(int32_t value);
+  private:
+  int32_t _internal_error() const;
+  void _internal_set_error(int32_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:message.GetChatServerRsp)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr host_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr port_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr token_;
+    int32_t error_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_message_2eproto;
+};
 // ===================================================================
 
 
@@ -400,44 +752,44 @@ class GetVerifyRsp final :
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
-// GetVerifyReq
+// GetVarifyReq
 
 // string email = 1;
-inline void GetVerifyReq::clear_email() {
+inline void GetVarifyReq::clear_email() {
   _impl_.email_.ClearToEmpty();
 }
-inline const std::string& GetVerifyReq::email() const {
-  // @@protoc_insertion_point(field_get:message.GetVerifyReq.email)
+inline const std::string& GetVarifyReq::email() const {
+  // @@protoc_insertion_point(field_get:message.GetVarifyReq.email)
   return _internal_email();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void GetVerifyReq::set_email(ArgT0&& arg0, ArgT... args) {
+void GetVarifyReq::set_email(ArgT0&& arg0, ArgT... args) {
  
  _impl_.email_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:message.GetVerifyReq.email)
+  // @@protoc_insertion_point(field_set:message.GetVarifyReq.email)
 }
-inline std::string* GetVerifyReq::mutable_email() {
+inline std::string* GetVarifyReq::mutable_email() {
   std::string* _s = _internal_mutable_email();
-  // @@protoc_insertion_point(field_mutable:message.GetVerifyReq.email)
+  // @@protoc_insertion_point(field_mutable:message.GetVarifyReq.email)
   return _s;
 }
-inline const std::string& GetVerifyReq::_internal_email() const {
+inline const std::string& GetVarifyReq::_internal_email() const {
   return _impl_.email_.Get();
 }
-inline void GetVerifyReq::_internal_set_email(const std::string& value) {
+inline void GetVarifyReq::_internal_set_email(const std::string& value) {
   
   _impl_.email_.Set(value, GetArenaForAllocation());
 }
-inline std::string* GetVerifyReq::_internal_mutable_email() {
+inline std::string* GetVarifyReq::_internal_mutable_email() {
   
   return _impl_.email_.Mutable(GetArenaForAllocation());
 }
-inline std::string* GetVerifyReq::release_email() {
-  // @@protoc_insertion_point(field_release:message.GetVerifyReq.email)
+inline std::string* GetVarifyReq::release_email() {
+  // @@protoc_insertion_point(field_release:message.GetVarifyReq.email)
   return _impl_.email_.Release();
 }
-inline void GetVerifyReq::set_allocated_email(std::string* email) {
+inline void GetVarifyReq::set_allocated_email(std::string* email) {
   if (email != nullptr) {
     
   } else {
@@ -449,69 +801,69 @@ inline void GetVerifyReq::set_allocated_email(std::string* email) {
     _impl_.email_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:message.GetVerifyReq.email)
+  // @@protoc_insertion_point(field_set_allocated:message.GetVarifyReq.email)
 }
 
 // -------------------------------------------------------------------
 
-// GetVerifyRsp
+// GetVarifyRsp
 
 // int32 error = 1;
-inline void GetVerifyRsp::clear_error() {
+inline void GetVarifyRsp::clear_error() {
   _impl_.error_ = 0;
 }
-inline int32_t GetVerifyRsp::_internal_error() const {
+inline int32_t GetVarifyRsp::_internal_error() const {
   return _impl_.error_;
 }
-inline int32_t GetVerifyRsp::error() const {
-  // @@protoc_insertion_point(field_get:message.GetVerifyRsp.error)
+inline int32_t GetVarifyRsp::error() const {
+  // @@protoc_insertion_point(field_get:message.GetVarifyRsp.error)
   return _internal_error();
 }
-inline void GetVerifyRsp::_internal_set_error(int32_t value) {
+inline void GetVarifyRsp::_internal_set_error(int32_t value) {
   
   _impl_.error_ = value;
 }
-inline void GetVerifyRsp::set_error(int32_t value) {
+inline void GetVarifyRsp::set_error(int32_t value) {
   _internal_set_error(value);
-  // @@protoc_insertion_point(field_set:message.GetVerifyRsp.error)
+  // @@protoc_insertion_point(field_set:message.GetVarifyRsp.error)
 }
 
 // string email = 2;
-inline void GetVerifyRsp::clear_email() {
+inline void GetVarifyRsp::clear_email() {
   _impl_.email_.ClearToEmpty();
 }
-inline const std::string& GetVerifyRsp::email() const {
-  // @@protoc_insertion_point(field_get:message.GetVerifyRsp.email)
+inline const std::string& GetVarifyRsp::email() const {
+  // @@protoc_insertion_point(field_get:message.GetVarifyRsp.email)
   return _internal_email();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void GetVerifyRsp::set_email(ArgT0&& arg0, ArgT... args) {
+void GetVarifyRsp::set_email(ArgT0&& arg0, ArgT... args) {
  
  _impl_.email_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:message.GetVerifyRsp.email)
+  // @@protoc_insertion_point(field_set:message.GetVarifyRsp.email)
 }
-inline std::string* GetVerifyRsp::mutable_email() {
+inline std::string* GetVarifyRsp::mutable_email() {
   std::string* _s = _internal_mutable_email();
-  // @@protoc_insertion_point(field_mutable:message.GetVerifyRsp.email)
+  // @@protoc_insertion_point(field_mutable:message.GetVarifyRsp.email)
   return _s;
 }
-inline const std::string& GetVerifyRsp::_internal_email() const {
+inline const std::string& GetVarifyRsp::_internal_email() const {
   return _impl_.email_.Get();
 }
-inline void GetVerifyRsp::_internal_set_email(const std::string& value) {
+inline void GetVarifyRsp::_internal_set_email(const std::string& value) {
   
   _impl_.email_.Set(value, GetArenaForAllocation());
 }
-inline std::string* GetVerifyRsp::_internal_mutable_email() {
+inline std::string* GetVarifyRsp::_internal_mutable_email() {
   
   return _impl_.email_.Mutable(GetArenaForAllocation());
 }
-inline std::string* GetVerifyRsp::release_email() {
-  // @@protoc_insertion_point(field_release:message.GetVerifyRsp.email)
+inline std::string* GetVarifyRsp::release_email() {
+  // @@protoc_insertion_point(field_release:message.GetVarifyRsp.email)
   return _impl_.email_.Release();
 }
-inline void GetVerifyRsp::set_allocated_email(std::string* email) {
+inline void GetVarifyRsp::set_allocated_email(std::string* email) {
   if (email != nullptr) {
     
   } else {
@@ -523,45 +875,45 @@ inline void GetVerifyRsp::set_allocated_email(std::string* email) {
     _impl_.email_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:message.GetVerifyRsp.email)
+  // @@protoc_insertion_point(field_set_allocated:message.GetVarifyRsp.email)
 }
 
 // string code = 3;
-inline void GetVerifyRsp::clear_code() {
+inline void GetVarifyRsp::clear_code() {
   _impl_.code_.ClearToEmpty();
 }
-inline const std::string& GetVerifyRsp::code() const {
-  // @@protoc_insertion_point(field_get:message.GetVerifyRsp.code)
+inline const std::string& GetVarifyRsp::code() const {
+  // @@protoc_insertion_point(field_get:message.GetVarifyRsp.code)
   return _internal_code();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void GetVerifyRsp::set_code(ArgT0&& arg0, ArgT... args) {
+void GetVarifyRsp::set_code(ArgT0&& arg0, ArgT... args) {
  
  _impl_.code_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:message.GetVerifyRsp.code)
+  // @@protoc_insertion_point(field_set:message.GetVarifyRsp.code)
 }
-inline std::string* GetVerifyRsp::mutable_code() {
+inline std::string* GetVarifyRsp::mutable_code() {
   std::string* _s = _internal_mutable_code();
-  // @@protoc_insertion_point(field_mutable:message.GetVerifyRsp.code)
+  // @@protoc_insertion_point(field_mutable:message.GetVarifyRsp.code)
   return _s;
 }
-inline const std::string& GetVerifyRsp::_internal_code() const {
+inline const std::string& GetVarifyRsp::_internal_code() const {
   return _impl_.code_.Get();
 }
-inline void GetVerifyRsp::_internal_set_code(const std::string& value) {
+inline void GetVarifyRsp::_internal_set_code(const std::string& value) {
   
   _impl_.code_.Set(value, GetArenaForAllocation());
 }
-inline std::string* GetVerifyRsp::_internal_mutable_code() {
+inline std::string* GetVarifyRsp::_internal_mutable_code() {
   
   return _impl_.code_.Mutable(GetArenaForAllocation());
 }
-inline std::string* GetVerifyRsp::release_code() {
-  // @@protoc_insertion_point(field_release:message.GetVerifyRsp.code)
+inline std::string* GetVarifyRsp::release_code() {
+  // @@protoc_insertion_point(field_release:message.GetVarifyRsp.code)
   return _impl_.code_.Release();
 }
-inline void GetVerifyRsp::set_allocated_code(std::string* code) {
+inline void GetVarifyRsp::set_allocated_code(std::string* code) {
   if (code != nullptr) {
     
   } else {
@@ -573,12 +925,214 @@ inline void GetVerifyRsp::set_allocated_code(std::string* code) {
     _impl_.code_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:message.GetVerifyRsp.code)
+  // @@protoc_insertion_point(field_set_allocated:message.GetVarifyRsp.code)
+}
+
+// -------------------------------------------------------------------
+
+// GetChatServerReq
+
+// int32 uid = 1;
+inline void GetChatServerReq::clear_uid() {
+  _impl_.uid_ = 0;
+}
+inline int32_t GetChatServerReq::_internal_uid() const {
+  return _impl_.uid_;
+}
+inline int32_t GetChatServerReq::uid() const {
+  // @@protoc_insertion_point(field_get:message.GetChatServerReq.uid)
+  return _internal_uid();
+}
+inline void GetChatServerReq::_internal_set_uid(int32_t value) {
+  
+  _impl_.uid_ = value;
+}
+inline void GetChatServerReq::set_uid(int32_t value) {
+  _internal_set_uid(value);
+  // @@protoc_insertion_point(field_set:message.GetChatServerReq.uid)
+}
+
+// -------------------------------------------------------------------
+
+// GetChatServerRsp
+
+// int32 error = 1;
+inline void GetChatServerRsp::clear_error() {
+  _impl_.error_ = 0;
+}
+inline int32_t GetChatServerRsp::_internal_error() const {
+  return _impl_.error_;
+}
+inline int32_t GetChatServerRsp::error() const {
+  // @@protoc_insertion_point(field_get:message.GetChatServerRsp.error)
+  return _internal_error();
+}
+inline void GetChatServerRsp::_internal_set_error(int32_t value) {
+  
+  _impl_.error_ = value;
+}
+inline void GetChatServerRsp::set_error(int32_t value) {
+  _internal_set_error(value);
+  // @@protoc_insertion_point(field_set:message.GetChatServerRsp.error)
+}
+
+// string host = 2;
+inline void GetChatServerRsp::clear_host() {
+  _impl_.host_.ClearToEmpty();
+}
+inline const std::string& GetChatServerRsp::host() const {
+  // @@protoc_insertion_point(field_get:message.GetChatServerRsp.host)
+  return _internal_host();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void GetChatServerRsp::set_host(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.host_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:message.GetChatServerRsp.host)
+}
+inline std::string* GetChatServerRsp::mutable_host() {
+  std::string* _s = _internal_mutable_host();
+  // @@protoc_insertion_point(field_mutable:message.GetChatServerRsp.host)
+  return _s;
+}
+inline const std::string& GetChatServerRsp::_internal_host() const {
+  return _impl_.host_.Get();
+}
+inline void GetChatServerRsp::_internal_set_host(const std::string& value) {
+  
+  _impl_.host_.Set(value, GetArenaForAllocation());
+}
+inline std::string* GetChatServerRsp::_internal_mutable_host() {
+  
+  return _impl_.host_.Mutable(GetArenaForAllocation());
+}
+inline std::string* GetChatServerRsp::release_host() {
+  // @@protoc_insertion_point(field_release:message.GetChatServerRsp.host)
+  return _impl_.host_.Release();
+}
+inline void GetChatServerRsp::set_allocated_host(std::string* host) {
+  if (host != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.host_.SetAllocated(host, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.host_.IsDefault()) {
+    _impl_.host_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:message.GetChatServerRsp.host)
+}
+
+// string port = 3;
+inline void GetChatServerRsp::clear_port() {
+  _impl_.port_.ClearToEmpty();
+}
+inline const std::string& GetChatServerRsp::port() const {
+  // @@protoc_insertion_point(field_get:message.GetChatServerRsp.port)
+  return _internal_port();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void GetChatServerRsp::set_port(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.port_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:message.GetChatServerRsp.port)
+}
+inline std::string* GetChatServerRsp::mutable_port() {
+  std::string* _s = _internal_mutable_port();
+  // @@protoc_insertion_point(field_mutable:message.GetChatServerRsp.port)
+  return _s;
+}
+inline const std::string& GetChatServerRsp::_internal_port() const {
+  return _impl_.port_.Get();
+}
+inline void GetChatServerRsp::_internal_set_port(const std::string& value) {
+  
+  _impl_.port_.Set(value, GetArenaForAllocation());
+}
+inline std::string* GetChatServerRsp::_internal_mutable_port() {
+  
+  return _impl_.port_.Mutable(GetArenaForAllocation());
+}
+inline std::string* GetChatServerRsp::release_port() {
+  // @@protoc_insertion_point(field_release:message.GetChatServerRsp.port)
+  return _impl_.port_.Release();
+}
+inline void GetChatServerRsp::set_allocated_port(std::string* port) {
+  if (port != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.port_.SetAllocated(port, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.port_.IsDefault()) {
+    _impl_.port_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:message.GetChatServerRsp.port)
+}
+
+// string token = 4;
+inline void GetChatServerRsp::clear_token() {
+  _impl_.token_.ClearToEmpty();
+}
+inline const std::string& GetChatServerRsp::token() const {
+  // @@protoc_insertion_point(field_get:message.GetChatServerRsp.token)
+  return _internal_token();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void GetChatServerRsp::set_token(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.token_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:message.GetChatServerRsp.token)
+}
+inline std::string* GetChatServerRsp::mutable_token() {
+  std::string* _s = _internal_mutable_token();
+  // @@protoc_insertion_point(field_mutable:message.GetChatServerRsp.token)
+  return _s;
+}
+inline const std::string& GetChatServerRsp::_internal_token() const {
+  return _impl_.token_.Get();
+}
+inline void GetChatServerRsp::_internal_set_token(const std::string& value) {
+  
+  _impl_.token_.Set(value, GetArenaForAllocation());
+}
+inline std::string* GetChatServerRsp::_internal_mutable_token() {
+  
+  return _impl_.token_.Mutable(GetArenaForAllocation());
+}
+inline std::string* GetChatServerRsp::release_token() {
+  // @@protoc_insertion_point(field_release:message.GetChatServerRsp.token)
+  return _impl_.token_.Release();
+}
+inline void GetChatServerRsp::set_allocated_token(std::string* token) {
+  if (token != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.token_.SetAllocated(token, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.token_.IsDefault()) {
+    _impl_.token_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:message.GetChatServerRsp.token)
 }
 
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 

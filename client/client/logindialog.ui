@@ -41,6 +41,13 @@
       <number>5</number>
      </property>
      <item>
+      <widget class="QLabel" name="err_tip">
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item>
       <widget class="QWidget" name="widget" native="true">
        <layout class="QGridLayout" name="gridLayout">
         <item row="0" column="0">
@@ -189,7 +196,7 @@
         </spacer>
        </item>
        <item>
-        <widget class="QPushButton" name="pushButton">
+        <widget class="QPushButton" name="log_btn">
          <property name="minimumSize">
           <size>
            <width>30</width>

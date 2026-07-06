@@ -234,9 +234,11 @@ void RegisterDialog::on_get_code_clicked()
 
 void RegisterDialog::slot_reg_mod_finish(ReqId id, QString res, ErrorCode err)
 {
+    qDebug() << "register response id:" << id << "http err:" << err << "raw:" << res;
+
     if (err != ErrorCode::Success)
     {
-        showTip(tr("获取验证码失败，请检查网络"), false);
+        showTip(formatServerError(err), false);
         return;
     }
 
@@ -257,7 +259,11 @@ void RegisterDialog::slot_reg_mod_finish(ReqId id, QString res, ErrorCode err)
     if (_handlers.contains(id))
     {
         _handlers[id](jsonObj);
+        return;
     }
+
+    qDebug() << "register handler not found, id:" << id << "json:" << jsonObj;
+    showTip(tr("未知请求回包，id：%1").arg(id), false);
 }
 
 void RegisterDialog::initHttpHandlers()
@@ -265,9 +271,12 @@ void RegisterDialog::initHttpHandlers()
     // 注册“获取验证码”回包逻辑
     _handlers.insert(ReqId::ID_GET_VERIFY_CODE, [this](const QJsonObject &jsonObj) {
         const int error = jsonObj["error"].toInt();
+        qDebug() << "register get verify response:" << jsonObj
+                 << "error:" << error
+                 << "message:" << serverErrorToString(error);
         if (error != static_cast<int>(ErrorCode::Success))
         {
-            showTip(tr("参数错误"), false);
+            showTip(formatServerError(error), false);
             return;
         }
 
@@ -279,8 +288,11 @@ void RegisterDialog::initHttpHandlers()
     //注册注册用户回包逻辑
     _handlers.insert(ReqId::ID_REG_USER, [this](QJsonObject jsonObj){
         int error = jsonObj["error"].toInt();
+        qDebug() << "register user response:" << jsonObj
+                 << "error:" << error
+                 << "message:" << serverErrorToString(error);
         if(error != static_cast<int>(ErrorCode::Success)){
-            showTip(tr("参数错误"),false);
+            showTip(formatServerError(error),false);
             return;
         }
         auto email = jsonObj["email"].toString();

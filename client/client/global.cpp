@@ -37,5 +37,46 @@ std::function<QString(QString)> xorString = [](QString input){
     return result;
 };
 
+QString serverErrorToString(int error)
+{
+    switch (error) {
+    case Success:
+        return QObject::tr("成功");
+    case ERR_JSON:
+        return QObject::tr("验证码服务 Redis 错误或本地 JSON 错误");
+    case ERR_NETWORK:
+        return QObject::tr("验证码服务异常或本地网络错误");
+    case SERVER_ERR_JSON:
+        return QObject::tr("服务端 JSON 解析失败");
+    case SERVER_RPC_FAILED:
+        return QObject::tr("RPC 调用失败，请检查 VerifyServer/StatusServer 是否启动或 proto 是否一致");
+    case SERVER_VERIFY_EXPIRED:
+        return QObject::tr("验证码已过期");
+    case SERVER_VERIFY_CODE_ERR:
+        return QObject::tr("验证码错误");
+    case SERVER_USER_EXIST:
+        return QObject::tr("用户或邮箱已存在");
+    case SERVER_PASSWD_ERR:
+        return QObject::tr("密码错误");
+    case SERVER_EMAIL_NOT_MATCH:
+        return QObject::tr("用户名和邮箱不匹配");
+    case SERVER_PASSWD_UPDATE_FAILED:
+        return QObject::tr("密码更新失败");
+    case SERVER_PASSWD_INVALID:
+        return QObject::tr("用户名或密码错误");
+    case SERVER_TOKEN_INVALID:
+        return QObject::tr("Token 失效");
+    case SERVER_UID_INVALID:
+        return QObject::tr("UID 无效");
+    case SERVER_SQL_ERROR:
+        return QObject::tr("数据库错误");
+    default:
+        return QObject::tr("未知错误");
+    }
+}
 
+QString formatServerError(int error)
+{
+    return QObject::tr("%1，错误码：%2").arg(serverErrorToString(error)).arg(error);
+}
 

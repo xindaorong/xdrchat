@@ -144,8 +144,10 @@ void ResetDialog::on_verify_btn_clicked_clicked()
 
 void ResetDialog::slot_reset_mod_finish(ReqId id, QString res, ErrorCode err)
 {
+    qDebug() << "reset response id:" << id << "http err:" << err << "raw:" << res;
+
     if(err != ErrorCode::Success){
-        showTip(tr("网络请求错误"),false);
+        showTip(formatServerError(err),false);
         return;
     }
 
@@ -163,8 +165,13 @@ void ResetDialog::slot_reset_mod_finish(ReqId id, QString res, ErrorCode err)
         return;
     }
 
-
     //调用对应的逻辑,根据id回调。
+    if (!_handlers.contains(id)) {
+        qDebug() << "reset handler not found, id:" << id << "json:" << jsonDoc.object();
+        showTip(tr("未知请求回包，id：%1").arg(id), false);
+        return;
+    }
+
     _handlers[id](jsonDoc.object());
 
     return;
@@ -179,8 +186,11 @@ void ResetDialog::initHandlers()
     //注册获取验证码回包逻辑
     _handlers.insert(ReqId::ID_GET_VERIFY_CODE, [this](QJsonObject jsonObj){
         int error = jsonObj["error"].toInt();
+        qDebug() << "reset get verify response:" << jsonObj
+                 << "error:" << error
+                 << "message:" << serverErrorToString(error);
         if(error != ErrorCode:: Success){
-            showTip(tr("参数错误"),false);
+            showTip(formatServerError(error),false);
             return;
         }
         auto email = jsonObj["email"].toString();
@@ -191,8 +201,11 @@ void ResetDialog::initHandlers()
     //注册注册用户回包逻辑
     _handlers.insert(ReqId::ID_RESET_PWD, [this](QJsonObject jsonObj){
         int error = jsonObj["error"].toInt();
+        qDebug() << "reset pwd response:" << jsonObj
+                 << "error:" << error
+                 << "message:" << serverErrorToString(error);
         if(error != ErrorCode::Success){
-            showTip(tr("参数错误"),false);
+            showTip(formatServerError(error),false);
             return;
         }
         auto email = jsonObj["email"].toString();
@@ -200,7 +213,6 @@ void ResetDialog::initHandlers()
          qDebug()<< "email is " << email ;
         qDebug()<< "user uuid is " <<  jsonObj["uuid"].toString();
     });
-
 }
 
 

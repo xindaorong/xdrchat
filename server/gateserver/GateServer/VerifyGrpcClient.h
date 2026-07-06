@@ -12,9 +12,9 @@ using grpc::Channel;
 using grpc::Status;
 using grpc::ClientContext;
 
-using message::GetVerifyReq;
-using message::GetVerifyRsp;
-using message::VerifyService;
+using message::GetVarifyReq;
+using message::GetVarifyRsp;
+using message::VarifyService;
 
 
 class RPConPool{
@@ -24,7 +24,7 @@ public:
       for (size_t i = 0; i < pool_size_; ++i)
      {
         std::shared_ptr<Channel> channel = grpc::CreateChannel(host_ + ":" + port_, grpc::InsecureChannelCredentials());
-        connections.push(VerifyService::NewStub(channel));
+        connections.push(VarifyService::NewStub(channel));
      }
       
     }
@@ -37,7 +37,7 @@ public:
             connections.pop();
         }
     }
-    std::unique_ptr<VerifyService::Stub> GetCon()
+    std::unique_ptr<VarifyService::Stub> GetCon()
     {
         std::unique_lock<std::mutex> lock(mutex_);
         cond_.wait(lock, [this]
@@ -56,7 +56,7 @@ public:
         connections.pop();  
         return context;
     }
-    void returnCon(std::unique_ptr<VerifyService::Stub>context)
+    void returnCon(std::unique_ptr<VarifyService::Stub>context)
     {
         std::lock_guard<std::mutex> lock(mutex_);
         if (b_stop_)
@@ -76,7 +76,7 @@ private:
     size_t pool_size_;
     std::string host_;
     std::string port_;
-    std::queue<std::unique_ptr<VerifyService::Stub>>connections;
+    std::queue<std::unique_ptr<VarifyService::Stub>>connections;
     std::mutex mutex_;
     std::condition_variable cond_;
 
@@ -86,10 +86,10 @@ class VerifyGrpcClient :public Singleton<VerifyGrpcClient>
     friend class Singleton<VerifyGrpcClient>;
 public:
 
-        GetVerifyRsp GetVarifyCode(std::string email) {
+        GetVarifyRsp GetVarifyCode(std::string email) {
         ClientContext context;
-        GetVerifyRsp reply;
-        GetVerifyReq request;
+        GetVarifyRsp reply;
+        GetVarifyReq request;
         request.set_email(email);
         //错误日志6.8.6：给 gRPC 请求设置 30 秒超时，给 VerifyServer 发邮件留出时间，同时避免 GateServer 一直等待。
         context.set_deadline(std::chrono::system_clock::now() + std::chrono::seconds(30));
@@ -101,7 +101,7 @@ public:
             return reply;
         }
 
-        Status status = stub->GetVerifyCode(&context, request, &reply);
+        Status status = stub->GetVarifyCode(&context, request, &reply);
        
         if (status.ok()) {
             pool_->returnCon(std::move(stub));
