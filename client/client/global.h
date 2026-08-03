@@ -19,6 +19,12 @@ enum ReqId {
     ID_REG_USER = 1002,         // 注册用户
     ID_RESET_PWD=1003,   //重置密码
     ID_LOGIN_USER = 1004, //用户登录
+    ID_CHAT_LOGIN = 1005, //登陆聊天服务器
+    ID_CHAT_LOGIN_RSP= 1006, //登陆聊天服务器回包
+    // ID_SEARCH_USER_REQ = 1007, //用户搜索请求
+    // ID_SEARCH_USER_RSP = 1008, //搜索用户回包
+    // ID_ADD_FRIEND_REQ = 1009,  //添加好友申请
+    // ID_ADD_FRIEND_RSP = 1010, //申请添加好友回复
 };
 
 enum  ErrorCode {
@@ -60,7 +66,12 @@ enum ClickLbState {
     Normal = 0,//正常状态
     Selected = 1//选中状态
 };
-
+struct ServerInfo{
+    QString Host;
+    QString Port;
+    QString Token;
+    int Uid;
+};
 extern QString gate_url_prefix;
 Q_DECLARE_METATYPE(ReqId)
 Q_DECLARE_METATYPE(ErrorCode)
