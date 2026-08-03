@@ -7,12 +7,15 @@ RedisMgr::RedisMgr()
 
 bool RedisMgr::Connect(const std::string& host, int port)
 {
+    //1如果之前存在旧的连接，直接断开，比如redis断开重连(防止内存泄露)
 	if (this->_connect != nullptr)
 	{
 		redisFree(this->_connect);
 		this->_connect = nullptr;
 	}
+	//2调用hiredis的c函数建立TCP连接
 	this->_connect = redisConnect(host.c_str(), port);
+	//3几乎不可能发生，_connect分不到内存了
 	if (this->_connect == nullptr)
 	{
 		std::cout << "connect error: redisConnect returned null" << std::endl;
@@ -20,7 +23,7 @@ bool RedisMgr::Connect(const std::string& host, int port)
 	}
 	if (this->_connect->err)
 	{
-		std::cout << "connect error" << this->_connect->errstr << std::endl;
+		std::cout << "connect error " << this->_connect->errstr << std::endl;
 		redisFree(this->_connect);
 		this->_connect = nullptr;
 		return false;

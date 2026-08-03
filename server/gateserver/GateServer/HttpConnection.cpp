@@ -7,6 +7,7 @@ using namespace std;
 
 HttpConnection::HttpConnection(boost::asio::io_context& ioc)
     : _socket(ioc) {
+    cout << "HttpConnection constructed!" << endl;
 }
 
 // Convert a value in [0, 15] to its hex character.
@@ -130,6 +131,7 @@ void HttpConnection::PreParseGetParam()
 
 void HttpConnection::Start()
 {
+    cout << "11111" << endl;
     auto self = shared_from_this();
     http::async_read(_socket, _buffer, _request, [self](beast::error_code ec,
         std::size_t bytes_transferred)

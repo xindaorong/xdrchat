@@ -73,7 +73,7 @@ int main()
 		//TestRedisMgr();
 
 		// 读取配置文件中的 GateServer 端口号。
-		auto& gCfgMgr = ConfigMgr::Instance();
+		auto& gCfgMgr = ConfigMgr::Instance();//这里就已经对ConfigMgr进行了初始化
 		std::string gate_port_str = gCfgMgr["GateServer"]["Port"];
 
 		// 将字符串端口转换为无符号短整型，供服务器监听使用。
@@ -94,7 +94,7 @@ int main()
 		//错误日志6.8.2：启动阶段先连接并认证 Redis，避免 /user_register 读取验证码时返回 1003。
 		if (!RedisMgr::GetInstance()->Connect(redis_host, redis_port)) {
 			std::cerr << "Redis connect failed: " << redis_host << ":" << redis_port << std::endl;
-			return EXIT_FAILURE;
+			return EXIT_FAILURE;//这一句会直接让main直接终止执行
 		}
 		if (!redis_passwd.empty() && !RedisMgr::GetInstance()->Auth(redis_passwd)) {
 			std::cerr << "Redis auth failed" << std::endl;

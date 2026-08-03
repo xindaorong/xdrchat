@@ -1,4 +1,4 @@
-# Dependencies
+﻿# Dependencies
 **/node_modules/
 **/packages/
 
@@ -37,6 +37,7 @@
 *.tlog
 
 # Local private configuration
+server/chatServer/config.ini
 server/VerifyServer/config.json
 server/gateserver/GateServer/config.ini
 server/gateserver/GateServer/错误日志.md
